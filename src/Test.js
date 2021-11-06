@@ -1,28 +1,7 @@
 import { db } from "./firebase/config.js";
-import { collection, addDoc, getDocs } from "@firebase/firestore";
+import { collection, addDoc, getDocs, doc } from "@firebase/firestore";
+import { data } from "./comps/Data.js";
 
-const userColref = collection(db, "customers");
+console.log('Program is running');
 
-const addCustomer = async (customer) => {
-    await addDoc(userColref, customer);
-}
-
-const getUsers = async () => {
-    const data = await getDocs(userColref);
-    
-
-    data.docs.map(
-        (doc) => console.log({...doc.data(), id: doc.id})
-    );
-}
-
-let customer = {
-    name: "Quang Tien",
-    phoneNumber: "0789130657",
-    sex: "male"
-}
-
-const customers = db.collection('customers');
-// getUsers();
-
-// addCustomer(customer);
+const menusRef = collection(db, 'menus');
