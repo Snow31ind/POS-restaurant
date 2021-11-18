@@ -1,0 +1,40 @@
+.DishItem-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    animation-name: DishItemModal;
+    animation-duration: 4s;
+}
+
+.DishItem-backdrop-container img{
+    display: block;
+    width: 150px;
+    height: 150px;
+    /* max-width: 50%;
+    max-height: 50%; */
+    /* max-width: 60%;
+    max-height: 60%; */
+    /* box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5); */
+    /* border: 3px solid rgba(0, 0, 0, 0.5); */
+    /* border-radius: 90px; */
+}
+
+.DishItem-backdrop-container {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 800px;
+    background-color: white;
+    /* padding: 20px; */
+    border-radius: 20px;
+    border-style: inset;
+    /* background-image: url('https://i.pinimg.com/564x/31/87/6d/31876dd44d607bc23ae1fc409e286a08.jpg'); */
+    /* background-size: 100%; */
+}
