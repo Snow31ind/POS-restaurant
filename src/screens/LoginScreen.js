@@ -47,7 +47,7 @@ function LoginScreen() {
           <div className='w-100' style={{maxWidth: 400}}>
             <Card>
                 <Card.Body>
-                    <Card.Title className='text-center mb-4'>Log In</Card.Title>
+                    <Card.Title className='text-center mb-4'>Login</Card.Title>
                     {error && <Alert variant='danger'>{error}</Alert>}
                     <Form onSubmit={handleSubmit}>
 
@@ -80,7 +80,7 @@ function LoginScreen() {
                     
                 </Card.Body>
             </Card>
-            <div className='w-100 text-center mt-2'>
+            <div className='w-100 text-center mt-2' style={{fontWeight: 'bold', color: 'black', fontSize: 16}}>
                 Need an account? <Link to='/signup'>Sign up</Link>
             </div>
         </div>

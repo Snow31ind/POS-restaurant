@@ -16,7 +16,8 @@
 .MenuSection-menu-bar {
     background-color: rgba(255, 255, 255, 0.5);;
     opacity: 0.9v;
-    height: 10vh;
+    /* height: 10vh; */
+    padding: 10px;
     flex-direction: row;
     display: flex;
     align-items: center;
@@ -34,7 +35,7 @@
     display: none;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1428px) {
 .MenuSection-menu-bar-cart {
     display: block;
     border-style: solid;
@@ -61,24 +62,27 @@
 .MenuSection-menu-dish {
     flex-direction: column;
     display: flex;
-    height: 60vh;
+    /* height: 60vh; */
 }
 
 .MenuSection-menu-dish-title {
     /* background-color: #DDD5D8; */
     flex-direction: row;
     display: flex;
-    height: 5vh;
+    /* height: 5vh; */
+    justify-content: space-between;
+
 }
 
 .MenuSection-menu-item {
     /* background-color: #DDD5D8; */
     display: flex;
     align-items: center;
-    height: 20vh;
+    /* height: 20vh; */
     padding-left: 10px;
     padding-right: 10px;
     max-width: 100%;
+    margin-top: 10px;
 }
 
 .MenuItem-container {
@@ -87,9 +91,10 @@
     background-color: white;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    width: 150px;
+    /* height: 150px; */
+    /* width: 150px; */
     border-radius: 20px;
+    padding: 15px;
 }
 
 .DishItem-container {
@@ -111,12 +116,15 @@
 
 .MenuSection-cart {
     /* background-color: tomato; */
-    /* position: absolute;
-    top: 0;
-    right: 0; */
-    /* min-width: 10px; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* right: 0; */
+
     min-width: 25%;
     width: max-content;
+
+    /* max-width: 100%; */
+
     /* min-width: 400px; */
     /* max-width: 400px; */
     height: 100vh;

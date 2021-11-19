@@ -11,7 +11,6 @@ export function useData() {
 export function DataProvider({children}) {
 
     const [menus, setMenus] = useState([]);
-
     const menusRef = collection(db, 'menus')
 
     useEffect(

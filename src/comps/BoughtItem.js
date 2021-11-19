@@ -76,7 +76,7 @@ function BoughtItem({fromMenuId, id, name, price, quantity, image}){
                 <img src={image} alt={cupcake} style={{height: 90, width: 90, borderRadius: 90}} />
             </div>
             
-            <div style={{width: '70%', backgroundColor:'white', paddingLeft: 5, paddingRight: 5}}>
+            <div style={{height: '100%' ,width: '70%', backgroundColor:'white', paddingLeft: 5, paddingRight: 5}}>
                 <div style={{backgroundColor: 'white', display: 'flex', flexDirection: 'row'}}>
                     <text style={{fontWeight: 'bold', backgroundColor: 'white', width: '90%'}}> {name} </text>
                     <div style={{float: 'right'}}>
@@ -90,7 +90,7 @@ function BoughtItem({fromMenuId, id, name, price, quantity, image}){
 
                 </div>
 
-                <div style={{marginTop: 20, backgroundColor: 'white', width: '100%', display: 'flex'}}>
+                <div style={{marginTop: 10, backgroundColor: 'white', width: '100%', display: 'flex'}}>
                     <AiFillMinusSquare size={40}
                         color='gray'
                         onClick={handleClickMinusItem}

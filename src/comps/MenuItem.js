@@ -11,7 +11,7 @@ function MenuItem({
     picture
 }) {
     const { menus } = useData()
-    const { setRefreshCurrentSelectedMenuCount ,setSelectedMenuId, setSelectedDishes, selectedMenuId, cutList, setDishBars, selectedDishes  } = useMenu()
+    const {setSelectedMenuName , setRefreshCurrentSelectedMenuCount ,setSelectedMenuId, setSelectedDishes, selectedMenuId, cutList, setDishBars, selectedDishes  } = useMenu()
 
     const [isClicked, setIsClicked] = useState(false);
 
@@ -23,6 +23,8 @@ function MenuItem({
         const menuWithId = menus.find( menu => {return menu.id == id;})
         console.log('Selected menu: ', menuWithId);
         console.log('This menu contains: ', menuWithId.dishes);
+        
+        setSelectedMenuName( menuWithId.name )
 
         setSelectedDishes(menuWithId.dishes.map(
             dish => (dish)

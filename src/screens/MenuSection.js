@@ -27,13 +27,12 @@ import bg from '../pictures/POS-background.png';
 function MenuSection({setRefresh, refresh}) {
     // const homepageIcon = 'https://cdn-icons.flaticon.com/png/512/2932/premium/2932143.png?token=exp=1636136139~hmac=818881b59fd1a0251d8a6a4a49eef751';
 
-    const [selectedMenuName, setSelectedMenuName] = useState('');
 
     const [isPaid, setIsPaid] = useState(null);
     const [openDishModal, setOpenDishModal] = useState(false)
 
     const { menus } = useData()
-    const { dishBars, refreshCurrentSelectedMenuCount, selectedDish, selectedDishes, setSelectedDish  } = useMenu()
+    const { selectedMenuName, chunk, dishBars, refreshCurrentSelectedMenuCount, selectedDish, selectedDishes, setSelectedDish  } = useMenu()
     const { boughtList, setBoughtList } = useUser()
     const { cost, tax, totalAmount, setCost, setTax, setTotalAmount } = usePayment()
 
@@ -48,11 +47,16 @@ function MenuSection({setRefresh, refresh}) {
         { width: 1200, itemsToShow: 4},
     ]
 
+    const dishItemBreakPoints = [
+        { width: 360, itemsToShow: 1},
+        { width: 800, itemsToShow: 2},
+    ]
+
     const [click, setClick] = useState(false)
 
     const [openCart, setOpenCart] = useState(true)
     const showCart = () => {
-        if (window.innerWidth <= 960) setOpenCart(false)
+        if (window.innerWidth <= 1428) setOpenCart(false)
         else setOpenCart(true)
     }
 
@@ -64,7 +68,7 @@ function MenuSection({setRefresh, refresh}) {
         }
     , [])
 
-    window.addEventListener('resize', showCart)
+    window.addEventListener('resize', showCart);
 
 
     function PaymentModel() {
@@ -168,15 +172,15 @@ function MenuSection({setRefresh, refresh}) {
                 <div className='MenuSection-menu-dish'>
 
                     <div className='MenuSection-menu-dish-title'>
-                        <div style={{borderBottomStyle:'inset', width: '45%', height: 20, marginLeft: 15, marginLeft: 15}}></div>
-                        
+                        <div style={{borderBottomStyle:'inset', width: '40%', height: 20}}></div>
+
                         <div style={{width: '10%', display: 'flex', justifyContent: 'center'}}>
                             <text style={{fontWeight: 'bold', fontSize: 28, color: 'black', fontStyle: 'oblique'}}>
-                                {selectedMenuName == '' ? (<div> </div>) : selectedMenuName}
+                                {selectedMenuName == '' ? (<></>) : selectedMenuName}
                             </text>
                         </div>
 
-                        <div style={{borderBottomStyle:'inset', width: '45%', height: 20, marginRight: 15}}></div>
+                        <div style={{borderBottomStyle:'inset', width: '40%', height: 20}}></div>
                     </div>
 
                         <div className='MenuSection-menu-dish-item'>
@@ -190,7 +194,7 @@ function MenuSection({setRefresh, refresh}) {
                                     key={dishBar.id}
                                     enableSwipe={false}
                                     showArrows={false}
-                                    itemsToShow={3}
+                                    itemsToShow={chunk}
                                     pagination={false}
                                     showEmptySlots
                                     >
@@ -207,8 +211,12 @@ function MenuSection({setRefresh, refresh}) {
                                     </Carousel>
                                 )
                             )}
-                            itemPadding={[15, 15]}
+                            itemPadding={[10, 10]}
                             showArrows={false}
+                            breakPoints={dishItemBreakPoints}
+                            // enableMouseSwipe={true}
+                            // enableSwipe={true}
+
                         >
                         </Carousel>
                     </div>

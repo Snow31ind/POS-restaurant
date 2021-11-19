@@ -89,7 +89,7 @@ export default function SignUpScreen() {
 
                 </Card.Body>
             </Card>
-            <div className='w-100 text-center mt-2'>
+            <div className='w-100 text-center mt-2' style={{fontWeight: 'bold', color: 'black', fontSize: 16}}>
                 Already have an account? <Link to='/login'>Log in</Link>
             </div>
         </div>
