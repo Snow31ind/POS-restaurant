@@ -5,6 +5,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import { InputGroup } from 'react-bootstrap'
 import { MdEmail, MdOutlineEmail } from 'react-icons/md'
 import { AiOutlineLock } from 'react-icons/ai'
+import { Container } from 'react-bootstrap'
+import bg from '../pictures/POS-background.png';
+import Navbar from '../comps/Navbar/Navbar'
+
 export default function SignUpScreen() {
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -37,7 +41,14 @@ export default function SignUpScreen() {
     }
 
     return (
-        <>
+    <>
+    <Navbar/>
+    <Container fluid className='d-flex align-items-center justify-content-center' style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: `url(${bg})`, backgroundSize: '100%'}}>
+        <Container
+        className='w-100'
+          style={{minHeight: '90vh', backgroundColor: 'transparent'}}
+        >
+          <div className='w-100' style={{maxWidth: 400}}>
             <Card>
                 <Card.Body>
                     <Card.Title className='text-center mb-4'>Sign Up</Card.Title>
@@ -73,7 +84,7 @@ export default function SignUpScreen() {
                             </InputGroup>
                         </Form.Group>
 
-                        <Button disabled={loading} className='w-100 mt-2' type='submit'>Sign Up</Button>
+                        <Button style={{backgroundColor: 'red'}} disabled={loading} className='w-100 mt-2' type='submit'>Sign Up</Button>
                     </Form>
 
                 </Card.Body>
@@ -81,7 +92,10 @@ export default function SignUpScreen() {
             <div className='w-100 text-center mt-2'>
                 Already have an account? <Link to='/login'>Log in</Link>
             </div>
-        </>
+        </div>
+    </Container>
+</Container>
+</>
     )
 }
 

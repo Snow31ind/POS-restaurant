@@ -39,7 +39,8 @@ function MenuItem({
         <div className='MenuItem-container'
             style={{
             backgroundColor: (isHovering) ? '#2C3A65' : 'white',
-            opacity: isHovering ? '1' : '0.8'
+            opacity: isHovering ? '1' : '0.8',
+            color: isHovering ? 'white' : 'black'
             }}
             onClick={handleMenuItemClicked}
             onMouseEnter={() => setIsHovering(!isHovering)}

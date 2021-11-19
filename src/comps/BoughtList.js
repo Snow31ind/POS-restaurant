@@ -4,13 +4,13 @@ import { PaymentProvider } from '../contexts/PaymentContext'
 import { useUser } from '../contexts/UserContext'
 import Carousel from 'react-elastic-carousel';
 
-function BoughtList(){
+function BoughtList({itemsToShow}){
     const { boughtList } = useUser()
 
     return (
         <div style={{backgroundColor: 'white'}}>
             <Carousel
-                itemsToShow={4}
+                itemsToShow={itemsToShow}
                 itemsToScroll={4}
                 verticalMode={true}
                 itemPadding={[10, 10]}

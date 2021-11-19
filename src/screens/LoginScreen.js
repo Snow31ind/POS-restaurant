@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react'
-import { Form, Card, Button, Alert, InputGroup, FormControl } from 'react-bootstrap'
+import { Form, Card, Button, Alert, InputGroup, FormControl, Container } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import { AiOutlineAccountBook, AiOutlineLock } from 'react-icons/ai'
 import 'react-icons/md'
 import { MdOutlineAccountCircle } from 'react-icons/md'
-
+import bg from '../pictures/POS-background.png';
+import Navbar from '../comps/Navbar/Navbar'
 
 function LoginScreen() {
     const emailRef = useRef()
@@ -37,6 +38,13 @@ function LoginScreen() {
 
     return (
         <>
+        <Navbar/>
+        <Container fluid className='d-flex align-items-center justify-content-center' style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: `url(${bg})`, backgroundSize: '100%'}}>
+        <Container
+        className='w-100'
+          style={{minHeight: '90vh', backgroundColor: 'transparent'}}
+        >
+          <div className='w-100' style={{maxWidth: 400}}>
             <Card>
                 <Card.Body>
                     <Card.Title className='text-center mb-4'>Log In</Card.Title>
@@ -67,7 +75,7 @@ function LoginScreen() {
                             <Form.Check type='checkbox' label='Remember me' />
                         </Form.Group>
 
-                        <Button disabled={loading} className='w-100 mt-2' type='submit'>Sign Up</Button>
+                        <Button style={{backgroundColor: 'red'}} disabled={loading} className='w-100 mt-2' type='submit'>Login</Button>
                     </Form>
                     
                 </Card.Body>
@@ -75,7 +83,10 @@ function LoginScreen() {
             <div className='w-100 text-center mt-2'>
                 Need an account? <Link to='/signup'>Sign up</Link>
             </div>
-        </>
+        </div>
+    </Container>
+    </Container>
+    </>
     )
 }
 

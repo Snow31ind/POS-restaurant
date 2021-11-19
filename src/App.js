@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Carousel from 'react-elastic-carousel';
+// import Carousel from 'react-elastic-carousel';
 // import styles from './App.css'
 import { isValidTimestamp } from '@firebase/util';
 import MenuSection from './screens/MenuSection';
@@ -26,8 +26,48 @@ import { Container } from 'react-bootstrap';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import DashBoard from './comps/DashBoard';
 import PrivateRoute from './comps/PrivateRoute';
+import Home from './screens/Home';
+import Navbar from './comps/Navbar/Navbar';
+
+import { Carousel } from 'bootstrap';
+import About from './screens/About';
 
 function Test() {
+  const { currentUser } = useAuth()
+
+  return (
+    <>
+      {currentUser ? <MenuSection/> :
+      // <Container fluid className='d-flex align-items-center justify-content-center' style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: `url(${bg})`, backgroundSize: '100%'}}>
+
+      //   <Container
+      //     style={{minHeight: '90vh', backgroundColor: 'transparent'}}
+      //   >
+      //     <div className='w-100' style={{maxWidth: '400px'}}>
+            <BrowserRouter>
+            <AuthProvider>
+                <Routes>
+                  {/* <PrivateRoute  exact path='/' element={ <DashBoard/> } /> */}
+                  <Route path='/signup' element={ <SignUpScreen/> }/>
+                  <Route path='/login' element={ <LoginScreen/> }/>
+                  <Route exact path='/' element={
+                  <PrivateRoute>
+                    <DashBoard/>
+                    {/* <RunApp/> */}
+                  </PrivateRoute>
+                  }/>
+                </Routes>
+              </AuthProvider>
+            </BrowserRouter>
+      //     </div>
+      //   </Container>
+      // </Container>
+      }
+    </>
+  )
+}
+
+function Test1() {
   const { currentUser } = useAuth()
 
   return (
@@ -80,7 +120,8 @@ function RunApp() {
         <UserProvider>
           <MenuProvider>
             <PaymentProvider>
-              <Test/>
+              {/* <Test/> */}
+              <Test1/>
               {/* <MenuSection /> */}
             </PaymentProvider>
           </MenuProvider>
@@ -91,10 +132,56 @@ function RunApp() {
   )
 }
 
+function TestHome() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={ <Home/> }/>
+      </Routes>
+  </BrowserRouter>
+  )
+}
+
 function App() {
 
   return (
-    <RunApp />
+    <BrowserRouter>      
+      {/* <Container fluid className='d-flex align-items-center justify-content-center' style={{minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundImage: `url(${bg})`, backgroundSize: '100%'}}> */}
+        {/* <Container
+          className='w-100'
+            style={{minHeight: '90vh', backgroundColor: 'transparent'}}
+          >
+            <div className='w-100' style={{maxWidth: 400}}> */}
+              <AuthProvider>
+                <Routes>
+                  {/* <Route path='/home' element={  <Home/> } /> */}
+                  {/* <Route path='/about' element={ <About/> } /> */}
+                  <Route path='/login' element={ <LoginScreen/> } />
+                  <Route path='/signup' element={ <SignUpScreen/> } />
+
+                  <Route exact path='/' element={
+                  <PrivateRoute>
+                          <DataProvider>
+                            <UserProvider>
+                              <MenuProvider>
+                                <PaymentProvider>
+                                        <MenuSection/>
+                                </PaymentProvider>
+                              </MenuProvider>
+                            </UserProvider>
+                          </DataProvider>
+                  </PrivateRoute>
+                  }/>
+                </Routes>
+              </AuthProvider>
+            {/* </div>
+          </Container> */}
+        {/* </Container> */}
+    </BrowserRouter>
+
+    // <TestHome/>
+    // <Home/>
+    // <RunApp />
     // <Test/>
   );
 }

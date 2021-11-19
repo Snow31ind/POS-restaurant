@@ -7,7 +7,8 @@
 
 .MenuSection-menu {
     /* background-color: violet; */
-    width: 75%;
+    /* max-width: 100%; */
+    /* min-width: 75%; */
     height: '100%';
     /* background-color: aqua; */
 }
@@ -25,11 +26,31 @@
     /* padding: 15px; */
 }
 
-.MenuSection-menu-bar-home {
+.MenuSection-menu-bar-cart {
     /* background-color: slateblue; */
+    /* border-style: solid;
+    border-radius: 20px;
+    padding: 10px; */
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+.MenuSection-menu-bar-cart {
+    display: block;
     border-style: solid;
     border-radius: 20px;
-    padding: 10px;
+    padding: 10px; 
+}
+
+.MenuSection-cart-mobile {
+    background: #242222;
+    /* background-color: antiquewhite; */
+    left: 0px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+    padding-left: 0px;
+}
 }
 
 .MenuSection-menu-bar-reload {
@@ -57,6 +78,7 @@
     height: 20vh;
     padding-left: 10px;
     padding-right: 10px;
+    max-width: 100%;
 }
 
 .MenuItem-container {
@@ -89,14 +111,22 @@
 
 .MenuSection-cart {
     /* background-color: tomato; */
-    width: 25%;
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    /* min-width: 10px; */
+    min-width: 25%;
+    width: max-content;
+    /* min-width: 400px; */
+    /* max-width: 400px; */
     height: 100vh;
 }
 
 .MenuSection-cart {
     border-left-style: groove;
     border-left-width: 5px;
-    border-left-color: antiquewhite ;
+    border-left-color: antiquewhite;
+    /* height: ; */
 }
 
 
@@ -110,7 +140,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: red; */
+    /* background-colorm: red; */
 }
 
 .PaymentModal-backdrop-container {
@@ -133,7 +163,8 @@
     border-radius: 20;
     color: black;
     font-weight: bold;
-    background: #2C3A65;
+    /* background: #2C3A65; */
+    background: white;
 }
 /* round buttons on hover */
 .rec.rec-arrow:hover {

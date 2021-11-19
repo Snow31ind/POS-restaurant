@@ -1,7 +1,7 @@
 .DishItem-backdrop {
     position: fixed;
-    top: 0;
-    left: 0;
+    /* top: 25%; */
+    /* left: 25%; */
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
@@ -17,6 +17,10 @@
     display: block;
     width: 150px;
     height: 150px;
+
+    /* width: 100%; */
+    /* height: 100%; */
+
     /* max-width: 50%;
     max-height: 50%; */
     /* max-width: 60%;
@@ -31,6 +35,8 @@
     flex-direction: column;
     height: 500px;
     width: 800px;
+    /* width: 100%; */
+    /* height: 50%; */
     background-color: white;
     /* padding: 20px; */
     border-radius: 20px;
