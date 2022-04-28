@@ -3,14 +3,14 @@
 
 ## Table of Contents
 * [Introduction](#introduction)
-* [Project's aim](#project's-aim)
+* [Project aim](#project-aim)
 * [Technologies](#technologies)
 * [Setup](#setup)
 
 ## Introduction
 A simple Point-Of-Sale website for restaurents.
 
-## Project's aim
+## Project aim
 * Order food online.
 * Manage data of users and restaurant revenue, which can be analyzed to pull useful insightful information.
 * Reduce cost for hiring employees.
