@@ -2,8 +2,8 @@
 
 
 ## Table of Contents
-* [Introduction](#intro)
-* [Project's aim](#aim)
+* [Introduction](#introduction)
+* [Project's aim](#project's-aim)
 * [Technologies](#technologies)
 * [Setup](#setup)
 
