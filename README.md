@@ -1,4 +1,44 @@
-# Table of Contents
+# POS Restaurant - web-based application 
+
+
+## Table of Contents
+* [Introduction](#intro)
+* [Project's aim](#aim)
+* [Technologies](#technologies)
+* [Setup](#setup)
+
+## Introduction
+A simple Point-Of-Sale website for restaurents.
+
+## Project's aim
+* Order food online.
+* Manage data of users and restaurant revenue, which can be analyzed to pull useful insightful information.
+* Reduce cost for hiring employees.
+* Industrialize and mordenize the restaurant business.
+
+## Technologies
+* Front-end: Framework ReactJS
+* NoSQL Database: Firebase
+
+## Setup
+1. 
+
+## Technologies
+
+## Setup
+
+![Sign in page](https://user-images.githubusercontent.com/90770150/165794048-98201b28-3e43-4850-a120-b6c8a0e3d980.png)
+![Order page](https://user-images.githubusercontent.com/90770150/165794183-3ab4fbb0-18db-4f30-9750-55c4bf7c5179.png)
+![Payment page](https://user-images.githubusercontent.com/90770150/165794317-aecadf31-85f5-4383-afe6-15b784ccdd76.png)
+
+
+
+## Introduction
+
+## Technologies
+
+## Setup
+
 
 Delpoyed website: [POS Restaurant](https://pos-restaurant.vercel.app/login)
 
